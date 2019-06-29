@@ -6,7 +6,7 @@
 
 ## Start
 ```bash
-    npm install react-better-scroll
+npm install react-better-scroll
 ```
 
 ## Usage

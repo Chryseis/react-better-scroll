@@ -2,25 +2,37 @@
   "name": "react-better-scroll",
   "version": "1.0.0",
   "description": "base on better-scroll",
-  "main": "index.js",
+  "main": "es5/index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "build": "babel src -d es5 --source-maps --copy-files"
   },
   "keywords": [
     "react",
     "better-scroll"
   ],
-  "author": "Allen",
-  "license": "ISC",
+  "files": [
+    "es5",
+    "examples"
+  ],
+  "author": "chryseis<294931812@qq.com>",
+  "license": "MIT",
+  "peerDependencies": {
+    "better-scroll": "^1.15.2"
+  },
   "dependencies": {
-    "better-scroll": "^1.15.2",
-    "react": "^16.8.6"
+    "better-scroll": "^1.15.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-proposal-json-strings": "^7.2.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-syntax-import-meta": "^7.2.0",
     "@babel/plugin-transform-runtime": "^7.4.4",
     "@babel/preset-env": "^7.4.5",
-    "@babel/preset-react": "^7.0.0"
+    "@babel/preset-react": "^7.0.0",
+    "react": "^16.8.6"
   }
 }

@@ -1,4 +1,4 @@
-import styles from './index.less'
+import './index.less'
 import React from 'react'
 import BScroll from 'better-scroll'
 
@@ -71,7 +71,6 @@ class ScrollBar extends React.Component {
 
     initScroll = () => {
         const { pullDownRefresh, pullUpLoad, options } = this.props
-        console.log(pullDownRefresh, pullUpLoad, 'init')
 
         let _pullDownRefresh = typeof pullDownRefresh === 'object' ? {
             ...defaultPullDownRefresh,
@@ -86,7 +85,6 @@ class ScrollBar extends React.Component {
         let _options = options || {}
 
         //解决内容高度不足一屏时，也可以下拉加载
-        console.log(this.scrollRef.clientHeight, 'height')
         if (this.wrapRef.clientHeight >= this.scrollRef.clientHeight && this.wrapRef.clientHeight > 0) {
             this.setState({
                 scrollHeight: this.wrapRef.clientHeight + 1
@@ -204,20 +202,20 @@ class ScrollBar extends React.Component {
         if (!isNaN(pullDownTop)) {
             if (pullDownRefresh) {
                 if (beforePullDown) {
-                    return <div className={styles.pull_down_refresh} style={{ top: pullDownTop }}>
+                    return <div className="pull_down_refresh" style={{ top: pullDownTop }}>
                         <img src="http://melly-weex-cdn.yingyinglicai.com/loading_f7.gif" alt="refresh"
-                             className={styles.refresh_image}/>
+                             className="refresh_image"/>
                     </div>
                 } else {
                     if (isPullingDown) {
-                        return <div className={styles.pull_down_refresh} style={{ top: pullDownTop }}>
+                        return <div className="pull_down_refresh" style={{ top: pullDownTop }}>
                             <img src="http://melly-weex-cdn.yingyinglicai.com/loading_f7.gif" alt="refresh"
-                                 className={styles.refresh_image}/>
+                                 className="refresh_image"/>
                         </div>
                     } else {
-                        return <div className={styles.pull_down_refresh} style={{ top: pullDownTop }}>
+                        return <div className="pull_down_refresh" style={{ top: pullDownTop }}>
                             <img src="http://melly-weex-cdn.yingyinglicai.com/loading_f7.gif" alt="refresh"
-                                 className={styles.refresh_image}/>
+                                 className="refresh_image"/>
                         </div>
                     }
                 }
@@ -239,13 +237,13 @@ class ScrollBar extends React.Component {
 
         if (pullUpLoad) {
             if (hasNext && isPullUpLoad) {
-                return <div className={styles.pull_up_load}>
+                return _pullUpLoad.txt.more ? <div className="pull_up_load">
                     {_pullUpLoad.txt.more}
-                </div>
+                </div> : null
             } else {
-                return <div className={styles.pull_up_load}>
+                return _pullUpLoad.txt.nomore ? <div className="pull_up_load">
                     {_pullUpLoad.txt.nomore}
-                </div>
+                </div> : null
             }
         } else {
             return null
