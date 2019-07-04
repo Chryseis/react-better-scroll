@@ -2,18 +2,18 @@
   "name": "react-better-scroll",
   "version": "1.0.0",
   "description": "base on better-scroll",
-  "main": "es5/index.js",
+  "main": "es/index.js",
   "scripts": {
     "test": "test",
-    "build": "babel src -d es5 --source-maps --copy-files"
+    "build": "babel src -d es --source-maps --copy-files"
   },
   "keywords": [
     "react",
     "better-scroll"
   ],
   "files": [
-    "es5",
-    "examples"
+    "es",
+    "src"
   ],
   "author": "chryseis<294931812@qq.com>",
   "license": "MIT",
